@@ -1,0 +1,1 @@
+Benovate tests Django application

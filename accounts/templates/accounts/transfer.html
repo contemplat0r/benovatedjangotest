@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="Row">
+        <div class="col-md-8 col-md-offset-2">
+            <h4>
+                Accounts
+            </h4>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div id="messagediv">
+    </div>
+    <div class="row">
+        <!--<div class="col-md-12">-->
+        <div class="col-md-8 col-md-offset-2">
+            <form id="transfer-form" method="post" action="{% url 'transfer' %}">
+                {% csrf_token %}
+                {{ transfer_form.as_p }}
+                <input type="submit" value="Transfer"/>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+

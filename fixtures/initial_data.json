@@ -1,0 +1,38 @@
+[
+    {"pk": 1,
+        "model":
+        "mission.persondescription",
+        "fields": {
+            "bio": "Very long biography\n...................\n...................\nBiography end.",
+            "surname": "Golikov",
+            "name": "Nikolai",
+            "other_contacts": "Phone: +380507777777",
+            "birthdate": "1969-10-04",
+            "skype": "contemplat0r",
+            "jabber": "contemplat0r@42cc.co",
+            "email": "uldo.forme@gmail.com"
+        }
+    },
+    {
+        "pk": 1, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "admin", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2016-04-04T08:41:43.635Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$12000$uj5csghFz2YZ$p0F6tG9gvlc8gGm8NQShrZna0q8PW4QLeHzZ87d/4w8=", 
+            "email": "uldo.forme@gmail.com", 
+            "date_joined": "2016-04-01T15:00:18.175Z"
+        }
+    },
+    {
+        "fields": {
+            "username": "User_1",
+            "first_name": "", "last_name": "", "is_active": true, "is_superuser": false, "is_staff": false, "last_login": "2016-04-13T15:49:55.188Z", "groups": [], "user_permissions": [], "password": "pbkdf2_sha256$15000$PorUQkUz50Md$ZtKtH5Xe6WA2lqkAeV3PsZfYh3ZRh/DhTziojciCQ3k=", "email": "", "date_joined": "2016-04-13T15:49:55.188Z"}, "model": "auth.user", "pk": 2} 
+]
