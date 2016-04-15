@@ -2,25 +2,54 @@
 {% block content %}
 <div class="container">
     <div class="Row">
-        <div class="col-md-8 col-md-offset-2">
-            <h4>
+        <div class="col-md-8 col-md-offset-4">
+            <h5>
                 Accounts
-            </h4>
+            </h5>
         </div>
     </div>
 </div>
 <div class="container">
-    <div id="messagediv">
-    </div>
-    <div class="row">
-        <!--<div class="col-md-12">-->
-        <div class="col-md-8 col-md-offset-2">
-            <form id="transfer-form" method="post" action="{% url 'transfer' %}">
-                {% csrf_token %}
-                {{ transfer_form.as_p }}
-                <input type="submit" value="Transfer"/>
-            </form>
+    <div class="row control-groupt">
+    <form id="transfer-form" method="post" action="{% url 'transfer' %}">
+        {% csrf_token %}
+        <div class="row">
+            <div id="messagediv" class="col-md-8 col-md-offset-2">
+            </div>
         </div>
+        <div class="row">
+            <label class="col-md-2 col-md-offset-2 control-label text-right">
+                    {{ transfer_form.users.label }}
+            </label>
+            <div class="col-md-8">
+                    {{ transfer_form.users }}
+            </div>
+        </div>
+        <div class="row">
+            <label class="col-md-2 col-md-offset-2 control-label text-right">
+                    {{ transfer_form.itn.label }}
+            </label>
+            <div class="col-md-8">
+                    {{ transfer_form.itn }}
+            </div>
+        </div>
+        <div class="row">
+            <label class="col-md-2 col-md-offset-2 control-label text-right">
+                    {{ transfer_form.transfer_sum.label }}
+            </label>
+            <div class="col-md-8">
+                    {{ transfer_form.transfer_sum }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-4">
+                <!--<input type="submit" value="Transfer"/>-->
+                    <button type="submit" class="btn btn-sm">
+                        Transfer
+                    </button>
+            </div>
+        </div>
+    </form>
     </div>
 </div>
 {% endblock content %}

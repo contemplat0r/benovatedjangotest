@@ -8,11 +8,5 @@ class TransferForm(forms.Form):
         self.fields['users'].choices = user_choices
 
     users = forms.ChoiceField(required=False, widget=forms.Select, choices=())
-    inn = forms.CharField(max_length=10)
+    itn = forms.CharField(max_length=10)
     transfer_sum = forms.DecimalField(max_digits=12, decimal_places=2)
-
-'''
-class SelectRankingsNamesAndYear(forms.Form):
-    select_rankings_names_field = forms.MultipleChoiceField(required=False, widget=forms.CheckboxSelectMultiple, choices=())
-    select_year_field = forms.ChoiceField(required=False, widget=forms.Select, choices=())
-'''
