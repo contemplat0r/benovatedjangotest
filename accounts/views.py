@@ -51,10 +51,12 @@ def transfer(request):
 
     transfer_result_message = None
    
-    if request.method == 'POST':
+    if request.method == 'POST' and request.is_ajax():
         print 'request.method is POST'
         transfer_form = TransferForm(tuple(names_choice_set), request.POST)
-
+        
+        errors = None
+        success = True
         if transfer_form.is_valid():
             selected_user_name = transfer_form.cleaned_data.get('users')
             itn = transfer_form.cleaned_data.get('itn')
@@ -65,10 +67,11 @@ def transfer(request):
         else:
             transfer_result_message = 'Data is invalid'
             print transfer_form.errors
-        return JsonResponse({'transferResultMessage' : transfer_result_message})
+            errors = transfer_form.errors.as_json()
+            success = False
+        return JsonResponse({'success' : success, 'transferResultMessage' : transfer_result_message, 'errors' : errors})
     elif request.method == 'GET':
         transfer_form = TransferForm(tuple(names_choice_set))
-        pass
     else:
         transfer_form = TransferForm(tuple(names_choice_set))
         transfer_result_message = 'Incorrect request method'
