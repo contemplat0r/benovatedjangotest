@@ -19,12 +19,24 @@ $(document).ready(
                         transferForm[0].reset();
                     }
                     else {
-                        transferForm.find('.errorField').remove();
+                        transferForm.find('.errorlist').remove();
+                        console.log('errors: ' + data.errors);
+                        console.log(typeof(data.errors));
                         for (var key in data.errors) {
-                            var error = data.errors[key];
-                            var field = transferForm.find('id_' + key);
-                            field.before('<p class="errorField"><em></em>' + error + '</p>');
+                            console.log('key: ' + key);
+                            var error = data.errors[key][0]['message'];
+                            console.log('error: ' + error);
+                            var field = transferForm.find('#id_' + key);
+                            console.log('find #: ' + field);
+                            //var field = transferForm.find('id_' + key);
+                            //console.log('find: ' + field);
+
+                            field.before('<ul class="errorlist"><li>' + error + '</li></ul>');
                         }
+
+                        /*console.log('before rendering form with errors');
+
+                        $('#errorform').html(data.form);*/
                     }
                     $('#errors').html(data['errors']);
                 },

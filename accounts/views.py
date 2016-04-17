@@ -1,5 +1,6 @@
 # -*- coding: utf8 -*- 
 
+import json
 from django.shortcuts import render, render_to_response
 from django.core.context_processors import csrf
 from django.conf import settings
@@ -51,25 +52,35 @@ def transfer(request):
 
     transfer_result_message = None
    
-    if request.method == 'POST' and request.is_ajax():
+    #if request.method == 'POST' and request.is_ajax():
+    if request.method == 'POST':
         print 'request.method is POST'
         transfer_form = TransferForm(tuple(names_choice_set), request.POST)
         
         errors = None
         success = True
         if transfer_form.is_valid():
+            print 'transfer_form is valid'
             selected_user_name = transfer_form.cleaned_data.get('users')
             itn = transfer_form.cleaned_data.get('itn')
             transfer_sum = transfer_form.cleaned_data.get('transfer_sum')
             transfer_result_message = process_transfer_request(
                 selected_user_name, itn, transfer_sum)
-
+            #context = {'transfer_form' : TransferForm(tuple(names_choice_set))}
+            #context.update(csrf(request))
+            #return render_to_response('accounts/transfer.html', context)
         else:
+            print 'transfer_form is invalid'
             transfer_result_message = 'Data is invalid'
+            print transfer_form
             print transfer_form.errors
             errors = transfer_form.errors.as_json()
+            print 'errors as json: ', errors, type(errors)
             success = False
-        return JsonResponse({'success' : success, 'transferResultMessage' : transfer_result_message, 'errors' : errors})
+            #context = {'transfer_form' : transfer_form}
+            #context.update(csrf(request))
+            #return render_to_response('accounts/transfer.html', context)
+        return JsonResponse({'success' : success, 'transferResultMessage' : transfer_result_message, 'errors' : json.loads(errors)})
     elif request.method == 'GET':
         transfer_form = TransferForm(tuple(names_choice_set))
     else:

@@ -13,7 +13,7 @@
     <div class="row control-groupt">
     <form id="transfer-form" method="post" action="{% url 'transfer' %}">
         {% csrf_token %}
-        <div class="row">
+        <!--<div class="row">
             <div id="messagediv" class="col-md-8 col-md-offset-2">
             </div>
         </div>
@@ -47,13 +47,18 @@
         </div>
         <div class="row">
             <div class="col-md-8 col-md-offset-4">
-                <!--<input type="submit" value="Transfer"/>-->
                     <button type="submit" class="btn btn-sm">
                         Transfer
                     </button>
             </div>
-        </div>
+        </div>-->
+        {{ transfer_form.as_p }}
+        <button type="submit" class="btn btn-sm">
+            Transfer
+        </button>
     </form>
+    </div>
+    <div id="errorform">
     </div>
 </div>
 {% endblock content %}
