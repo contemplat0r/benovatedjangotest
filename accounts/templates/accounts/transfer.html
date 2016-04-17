@@ -10,55 +10,45 @@
     </div>
 </div>
 <div class="container">
-    <div class="row control-groupt">
-    <form id="transfer-form" method="post" action="{% url 'transfer' %}">
-        {% csrf_token %}
-        <!--<div class="row">
-            <div id="messagediv" class="col-md-8 col-md-offset-2">
-            </div>
-        </div>
-        <div class="row">
-            <div id="errors" class="col-md-8 col-md-offset-2">
-            </div>
-        </div>
-        <div class="row">
-            <label class="col-md-2 col-md-offset-2 control-label text-right">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <form id="transfer-form" method="post" action="{% url 'transfer' %}" class="form-horizontal">
+                {% csrf_token %}
+                <div id="messagediv" class="controls">
+                </div>
+                <div id="errors" class="controls">
+                </div>
+                <div class="form-group">
+                    <label>
                     {{ transfer_form.users.label }}
-            </label>
-            <div class="col-md-8">
+                    </label>
+                    <div class=controls">
                     {{ transfer_form.users }}
-            </div>
-        </div>
-        <div class="row">
-            <label class="col-md-2 col-md-offset-2 control-label text-right">
-                    {{ transfer_form.itn.label }}
-            </label>
-            <div class="col-md-8">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>
+                        {{ transfer_form.itn.label }}
+                    </label>
+                    <div class=controls">
                     {{ transfer_form.itn }}
-            </div>
-        </div>
-        <div class="row">
-            <label class="col-md-2 col-md-offset-2 control-label text-right">
-                    {{ transfer_form.transfer_sum.label }}
-            </label>
-            <div class="col-md-8">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>
+                        {{ transfer_form.transfer_sum.label }}
+                    </label>
+                    <div class=controls">
                     {{ transfer_form.transfer_sum }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-8 col-md-offset-4">
+                    </div>
+                </div>
+                <div class="form-group">
                     <button type="submit" class="btn btn-sm">
                         Transfer
                     </button>
-            </div>
-        </div>-->
-        {{ transfer_form.as_p }}
-        <button type="submit" class="btn btn-sm">
-            Transfer
-        </button>
-    </form>
-    </div>
-    <div id="errorform">
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock content %}

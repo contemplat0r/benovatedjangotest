@@ -15,7 +15,7 @@ def validate_itn(value):
 class TransferForm(forms.Form):
     def __init__(self, user_choices, *args, **kwargs):
         super(TransferForm, self).__init__(*args, **kwargs)
-        self.fields['users'].choices = user_choices
+        self.fields['users'].choices = tuple(user_choices)
 
     users = forms.ChoiceField(required=False, widget=forms.Select, choices=())
     itn = forms.CharField(max_length=10, validators=[validate_itn])

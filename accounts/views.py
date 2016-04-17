@@ -20,8 +20,6 @@ def process_transfer_request(user_name, itn, transfer_sum):
             user__username=user_name).filter(itn=itn)
         recipients_num = recipients.count()
         if recipients_num > 0:
-            #getcontext().prec = 4
-            #transfer_to_one_recipient = transfer_sum / recipients_num
             transfer_to_one_recipient = Decimal((transfer_sum / recipients_num).quantize(Decimal('.00'), rounding=ROUND_HALF_DOWN))
             if transfer_to_one_recipient * recipients_num > transfer_sum:
                 transfer_to_one_recipient = Decimal((transfer_sum / recipients_num).quantize(Decimal('.00'), rounding=ROUND_DOWN))
@@ -43,48 +41,33 @@ def process_transfer_request(user_name, itn, transfer_sum):
 
 
 def transfer(request):
-    print 'Entry in transfer view'
     user_accounts = UserAccount.objects.all()
     user_names = [user_account.user.username for user_account in user_accounts]
     names_choice_set = [(name, name) for name in user_names]
 
-    transfer_form = TransferForm(tuple(names_choice_set))
+    transfer_form = TransferForm(names_choice_set)
 
     transfer_result_message = None
    
-    #if request.method == 'POST' and request.is_ajax():
-    if request.method == 'POST':
-        print 'request.method is POST'
-        transfer_form = TransferForm(tuple(names_choice_set), request.POST)
-        
+    if request.method == 'POST' and request.is_ajax():
+        transfer_form = TransferForm(names_choice_set, request.POST)
         errors = None
         success = True
         if transfer_form.is_valid():
-            print 'transfer_form is valid'
             selected_user_name = transfer_form.cleaned_data.get('users')
             itn = transfer_form.cleaned_data.get('itn')
             transfer_sum = transfer_form.cleaned_data.get('transfer_sum')
             transfer_result_message = process_transfer_request(
                 selected_user_name, itn, transfer_sum)
-            #context = {'transfer_form' : TransferForm(tuple(names_choice_set))}
-            #context.update(csrf(request))
-            #return render_to_response('accounts/transfer.html', context)
         else:
-            print 'transfer_form is invalid'
             transfer_result_message = 'Data is invalid'
-            print transfer_form
-            print transfer_form.errors
-            errors = transfer_form.errors.as_json()
-            print 'errors as json: ', errors, type(errors)
+            errors = json.loads(transfer_form.errors.as_json())
             success = False
-            #context = {'transfer_form' : transfer_form}
-            #context.update(csrf(request))
-            #return render_to_response('accounts/transfer.html', context)
-        return JsonResponse({'success' : success, 'transferResultMessage' : transfer_result_message, 'errors' : json.loads(errors)})
+        return JsonResponse({'success' : success, 'transferResultMessage' : transfer_result_message, 'errors' : errors})
     elif request.method == 'GET':
-        transfer_form = TransferForm(tuple(names_choice_set))
+        transfer_form = TransferForm(names_choice_set)
     else:
-        transfer_form = TransferForm(tuple(names_choice_set))
+        transfer_form = TransferForm(names_choice_set)
         transfer_result_message = 'Incorrect request method'
 
     context = {'transfer_form' : transfer_form}
