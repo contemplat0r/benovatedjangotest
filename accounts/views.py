@@ -7,13 +7,14 @@ from django.conf import settings
 from django.http import HttpResponse, JsonResponse
 from accounts.models import UserAccount
 from accounts.forms import TransferForm
-from decimal import Decimal, ROUND_HALF_DOWN, ROUND_DOWN, getcontext
+from decimal import Decimal, ROUND_HALF_DOWN, ROUND_DOWN
 
 # Create your views here.
 
 
 def process_transfer_request(user_name, itn, transfer_sum):
     process_result_message = ''
+    success = False
     user_account = UserAccount.objects.get(user__username=user_name)
     if transfer_sum <= user_account.ammount:
         recipients = UserAccount.objects.exclude(
@@ -29,7 +30,8 @@ def process_transfer_request(user_name, itn, transfer_sum):
                 recipient.ammount += transfer_to_one_recipient
                 recipient.save()
             user_account.save()
-
+            
+            success = True
             process_result_message = 'Transfered to %s accounts for %s. Account balance %s' % (str(recipients_num), str(transfer_to_one_recipient), str(user_account.ammount))
 
         else:
@@ -37,7 +39,7 @@ def process_transfer_request(user_name, itn, transfer_sum):
     else:
         process_result_message = 'Transfer sum exceed ammount of funds in account'
 
-    return process_result_message
+    return process_result_message, success
 
 
 def transfer(request):
@@ -57,7 +59,7 @@ def transfer(request):
             selected_user_name = transfer_form.cleaned_data.get('users')
             itn = transfer_form.cleaned_data.get('itn')
             transfer_sum = transfer_form.cleaned_data.get('transfer_sum')
-            transfer_result_message = process_transfer_request(
+            transfer_result_message, success = process_transfer_request(
                 selected_user_name, itn, transfer_sum)
         else:
             transfer_result_message = 'Data is invalid'
@@ -72,5 +74,4 @@ def transfer(request):
 
     context = {'transfer_form' : transfer_form}
     context.update(csrf(request))
-    #return render(request, 'accounts/transfer.html', context)
     return render_to_response('accounts/transfer.html', context)

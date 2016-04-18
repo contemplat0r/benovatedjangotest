@@ -17,6 +17,6 @@ class TransferForm(forms.Form):
         super(TransferForm, self).__init__(*args, **kwargs)
         self.fields['users'].choices = tuple(user_choices)
 
-    users = forms.ChoiceField(required=False, widget=forms.Select, choices=())
-    itn = forms.CharField(max_length=10, validators=[validate_itn])
-    transfer_sum = forms.DecimalField(max_digits=12, decimal_places=2)
+    users = forms.ChoiceField(required=False, widget=forms.Select, choices=(), label='User accounts')
+    itn = forms.CharField(max_length=10, validators=[validate_itn], label='Individual taxpayer number')
+    transfer_sum = forms.DecimalField(max_digits=12, decimal_places=2, label='Transfer sum')
