@@ -1,0 +1,381 @@
+[
+    {
+        "fields": {
+            "date_joined": "2016-04-13T15:48:43.521Z",
+            "email": "someadminmail@gmail.com",
+            "first_name": "",
+            "groups": [],
+            "is_active": true,
+            "is_staff": true,
+            "is_superuser": true,
+            "last_login": "2016-04-17T18:04:03.871Z",
+            "last_name": "",
+            "password": "pbkdf2_sha256$15000$AvihXZYQAp2O$DxPBqmMpy7L21WenvuB2byQawMy5M9RrzjoJGco5JDk=",
+            "user_permissions": [],
+            "username": "admin"
+        },
+        "model": "auth.user",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "date_joined": "2016-04-13T15:49:55.188Z",
+            "email": "",
+            "first_name": "",
+            "groups": [],
+            "is_active": true,
+            "is_staff": false,
+            "is_superuser": false,
+            "last_login": "2016-04-13T15:49:55.188Z",
+            "last_name": "",
+            "password": "pbkdf2_sha256$15000$PorUQkUz50Md$ZtKtH5Xe6WA2lqkAeV3PsZfYh3ZRh/DhTziojciCQ3k=",
+            "user_permissions": [],
+            "username": "User_1"
+        },
+        "model": "auth.user",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "date_joined": "2016-04-13T15:50:18.835Z",
+            "email": "",
+            "first_name": "",
+            "groups": [],
+            "is_active": true,
+            "is_staff": false,
+            "is_superuser": false,
+            "last_login": "2016-04-13T15:50:18.835Z",
+            "last_name": "",
+            "password": "pbkdf2_sha256$15000$nH60XAqbL6YL$gX6LA9graYeYu+Xa1A1R3hRDg5qqPUTUjHwnhvZQSmQ=",
+            "user_permissions": [],
+            "username": "User_2"
+        },
+        "model": "auth.user",
+        "pk": 3
+    },
+    {
+        "fields": {
+            "date_joined": "2016-04-14T14:39:16.176Z",
+            "email": "",
+            "first_name": "",
+            "groups": [],
+            "is_active": true,
+            "is_staff": false,
+            "is_superuser": false,
+            "last_login": "2016-04-14T14:39:16.176Z",
+            "last_name": "",
+            "password": "pbkdf2_sha256$15000$t7QI7m7OiAnt$81wY7oW73Mf/cnxbnWNJ0Q/bj5OEuVgEIi/yYK7AqNc=",
+            "user_permissions": [],
+            "username": "User_3"
+        },
+        "model": "auth.user",
+        "pk": 4
+    },
+    {
+        "fields": {
+            "date_joined": "2016-04-14T14:39:37.440Z",
+            "email": "",
+            "first_name": "",
+            "groups": [],
+            "is_active": true,
+            "is_staff": false,
+            "is_superuser": false,
+            "last_login": "2016-04-14T14:39:37.440Z",
+            "last_name": "",
+            "password": "pbkdf2_sha256$15000$ZkJp1n4bw7Io$jdSiXHWaj5WKmM/wGXOlDGUCG/CFCULcdY+KnrCMnEg=",
+            "user_permissions": [],
+            "username": "User_4"
+        },
+        "model": "auth.user",
+        "pk": 5
+    },
+    {
+        "fields": {
+            "date_joined": "2016-04-14T14:40:06.034Z",
+            "email": "",
+            "first_name": "",
+            "groups": [],
+            "is_active": true,
+            "is_staff": false,
+            "is_superuser": false,
+            "last_login": "2016-04-14T14:40:06.034Z",
+            "last_name": "",
+            "password": "pbkdf2_sha256$15000$IlrOCFhL2eKE$U4QBF7FDslSNo13cxv4x9uz6QzlB/Lika36QAGGB0cg=",
+            "user_permissions": [],
+            "username": "User_5"
+        },
+        "model": "auth.user",
+        "pk": 6
+    },
+    {
+        "fields": {
+            "date_joined": "2016-04-14T14:41:26.431Z",
+            "email": "",
+            "first_name": "",
+            "groups": [],
+            "is_active": true,
+            "is_staff": false,
+            "is_superuser": false,
+            "last_login": "2016-04-14T14:41:26.431Z",
+            "last_name": "",
+            "password": "pbkdf2_sha256$15000$s7fTzykz4tuf$7pLZWowMCHYQh95bQQ5/BoxUw/KskL7u9srGFWvJLhU=",
+            "user_permissions": [],
+            "username": "User_6"
+        },
+        "model": "auth.user",
+        "pk": 7
+    },
+    {
+        "fields": {
+            "ammount": "7934.58",
+            "itn": "1111111111",
+            "user": 2
+        },
+        "model": "accounts.useraccount",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "ammount": "22124.26",
+            "itn": "1111111112",
+            "user": 3
+        },
+        "model": "accounts.useraccount",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "ammount": "46163.7",
+            "itn": "1111111112",
+            "user": 4
+        },
+        "model": "accounts.useraccount",
+        "pk": 3
+    },
+    {
+        "fields": {
+            "ammount": "8925.26",
+            "itn": "1111111112",
+            "user": 5
+        },
+        "model": "accounts.useraccount",
+        "pk": 4
+    },
+    {
+        "fields": {
+            "ammount": "5274.7",
+            "itn": "1111111113",
+            "user": 6
+        },
+        "model": "accounts.useraccount",
+        "pk": 5
+    },
+    {
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2016-04-13T15:49:55.277Z",
+            "change_message": "",
+            "content_type": 4,
+            "object_id": "2",
+            "object_repr": "User_1",
+            "user": 1
+        },
+        "model": "admin.logentry",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2016-04-13T15:50:18.916Z",
+            "change_message": "",
+            "content_type": 4,
+            "object_id": "3",
+            "object_repr": "User_2",
+            "user": 1
+        },
+        "model": "admin.logentry",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2016-04-13T15:51:18.124Z",
+            "change_message": "",
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "User_1 111111",
+            "user": 1
+        },
+        "model": "admin.logentry",
+        "pk": 3
+    },
+    {
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2016-04-13T15:53:23.444Z",
+            "change_message": "",
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "User_2 111112",
+            "user": 1
+        },
+        "model": "admin.logentry",
+        "pk": 4
+    },
+    {
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2016-04-14T14:39:16.253Z",
+            "change_message": "",
+            "content_type": 4,
+            "object_id": "4",
+            "object_repr": "User_3",
+            "user": 1
+        },
+        "model": "admin.logentry",
+        "pk": 5
+    },
+    {
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2016-04-14T14:39:37.529Z",
+            "change_message": "",
+            "content_type": 4,
+            "object_id": "5",
+            "object_repr": "User_4",
+            "user": 1
+        },
+        "model": "admin.logentry",
+        "pk": 6
+    },
+    {
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2016-04-14T14:40:06.115Z",
+            "change_message": "",
+            "content_type": 4,
+            "object_id": "6",
+            "object_repr": "User_5",
+            "user": 1
+        },
+        "model": "admin.logentry",
+        "pk": 7
+    },
+    {
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2016-04-14T14:41:26.515Z",
+            "change_message": "",
+            "content_type": 4,
+            "object_id": "7",
+            "object_repr": "User_6",
+            "user": 1
+        },
+        "model": "admin.logentry",
+        "pk": 8
+    },
+    {
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2016-04-14T14:42:39.132Z",
+            "change_message": "",
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "User_3 111112",
+            "user": 1
+        },
+        "model": "admin.logentry",
+        "pk": 9
+    },
+    {
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2016-04-14T14:43:25.867Z",
+            "change_message": "",
+            "content_type": 7,
+            "object_id": "4",
+            "object_repr": "User_4 111112",
+            "user": 1
+        },
+        "model": "admin.logentry",
+        "pk": 10
+    },
+    {
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2016-04-14T14:44:21.550Z",
+            "change_message": "",
+            "content_type": 7,
+            "object_id": "5",
+            "object_repr": "User_5 111113",
+            "user": 1
+        },
+        "model": "admin.logentry",
+        "pk": 11
+    },
+    {
+        "fields": {
+            "action_flag": 2,
+            "action_time": "2016-04-17T18:04:28.622Z",
+            "change_message": "Changed itn.",
+            "content_type": 7,
+            "object_id": "5",
+            "object_repr": "User_5 1111111113",
+            "user": 1
+        },
+        "model": "admin.logentry",
+        "pk": 12
+    },
+    {
+        "fields": {
+            "action_flag": 2,
+            "action_time": "2016-04-17T18:04:40.664Z",
+            "change_message": "Changed itn.",
+            "content_type": 7,
+            "object_id": "4",
+            "object_repr": "User_4 1111111112",
+            "user": 1
+        },
+        "model": "admin.logentry",
+        "pk": 13
+    },
+    {
+        "fields": {
+            "action_flag": 2,
+            "action_time": "2016-04-17T18:04:54.196Z",
+            "change_message": "Changed itn.",
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "User_3 1111111112",
+            "user": 1
+        },
+        "model": "admin.logentry",
+        "pk": 14
+    },
+    {
+        "fields": {
+            "action_flag": 2,
+            "action_time": "2016-04-17T18:05:08.551Z",
+            "change_message": "Changed itn.",
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "User_2 1111111112",
+            "user": 1
+        },
+        "model": "admin.logentry",
+        "pk": 15
+    },
+    {
+        "fields": {
+            "action_flag": 2,
+            "action_time": "2016-04-17T18:05:24.939Z",
+            "change_message": "Changed itn.",
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "User_1 1111111111",
+            "user": 1
+        },
+        "model": "admin.logentry",
+        "pk": 16
+    }
+]
